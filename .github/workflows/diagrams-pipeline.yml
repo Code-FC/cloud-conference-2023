@@ -36,8 +36,13 @@ jobs:
         sh ./diagrams/makefile.sh
     - name: Update assets folder
       run: |
-        # moving files
+        # List current files
+        ls ${{ github.workspace }}/docs/assets/
+        # removing files
         rm ${{ github.workspace }}/docs/assets/*.png
+        # List files after remove
+        ls ${{ github.workspace }}/docs/assets/
+        # moving files
         mv *.png ${{ github.workspace }}/docs/assets
         git status
     - name: Obter o branch atual
