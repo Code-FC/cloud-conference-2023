@@ -24,7 +24,7 @@ with Diagram("Website landscape",
     webapp >> Edge(label="2", color="darkgreen") >> appInsights
     webapp >> Edge(label="3", color="darkgreen") >> sqlDatabase
 
-    # changing test diagramas
+    # changing test diagramasd
 
 
 
