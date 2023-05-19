@@ -37,6 +37,7 @@ jobs:
     - name: Update assets folder
       run: |
         # moving files
+        rm ${{ github.workspace }}/docs/assets/*.png
         mv *.png ${{ github.workspace }}/docs/assets
     - name: Commit diagrams image changes
       run: |
