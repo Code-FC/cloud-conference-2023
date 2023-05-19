@@ -10,5 +10,5 @@
 
 # Techinical definition
 
-![Landascape Diagram](./assets/landscape_architecture.png)
+![Landascape Diagram](/docs/assets/landscape_architecture.png)
 
