@@ -30,26 +30,30 @@ jobs:
         #pip install graphviz
         pip install diagrams   
     - name: Setup Graphviz
-      uses: ts-graphviz/setup-graphviz@v1      
-    - name: Generating diagrams
-      run: |
-        sh ./diagrams/makefile.sh
-    - name: Update assets folder
+      uses: ts-graphviz/setup-graphviz@v1          
+    - name: Remove legacy images
       run: |               
         echo ${{ github.job }} > ${{ github.workspace }}/docs/assets/filebase
         # removing files
-        rm ${{ github.workspace }}/docs/assets/*.png                
-        # moving files
-        mv *.png ${{ github.workspace }}/docs/assets        
-    - name: Obter o branch atual
-      run: |
-        branch=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///')
-        echo "O branch atual é: $branch"
+        rm -f ${{ github.workspace }}/docs/assets/*.png                        
     - name: Commit diagrams image changes
       run: |
         git config --global user.name 'Albert Tanure'
         git config --global user.email 'tanure@live.com'
         git add .
         git commit -am "Update generated diagrams images"
-        git push --no-verify
-
+        git push
+    - name: Generating diagrams
+      run: |
+        sh ./diagrams/makefile.sh
+    - name: Update assets folder
+      run: |                               
+        # moving files
+        mv *.png ${{ github.workspace }}/docs/assets           
+    - name: Commit diagrams image changes
+      run: |
+        git config --global user.name 'Albert Tanure'
+        git config --global user.email 'tanure@live.com'
+        git add .
+        git commit -am "Update generated diagrams images"
+        git push
