@@ -7,10 +7,9 @@ on:
   push:
     branches: [ "main" ]
     paths:
-    - diagrams/**
-    paths-ignore:
-      - 'docs/**'
-
+    - 'diagrams/**'
+    - '!/docs/**'
+    
 permissions:
   contents: write
 
