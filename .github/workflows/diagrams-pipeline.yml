@@ -37,7 +37,7 @@ jobs:
     - name: Update assets folder
       run: |        
         cat ${{ github.workspace }}/docs/assets/filebase
-        echo ${{ GITHUB_JOB }} > ${{ github.workspace }}/docs/assets/filebase
+        echo ${{ github.job }} > ${{ github.workspace }}/docs/assets/filebase
         # removing files
         rm ${{ github.workspace }}/docs/assets/*.png        
         cat ${{ github.workspace }}/docs/assets/filebase
