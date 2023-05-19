@@ -15,7 +15,7 @@ with Diagram("ccdays landscape",
     
     client >>  webapp
     
-    webapp >> sqlDatabase    
+    # webapp >> sqlDatabase    
 
 
     
