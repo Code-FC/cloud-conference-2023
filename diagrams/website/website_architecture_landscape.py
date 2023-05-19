@@ -23,7 +23,7 @@ with Diagram("Website landscape",
     client >> Edge(label="4", color="blue") >> cdn
     webapp >> Edge(label="2", color="darkgreen") >> appInsights
     webapp >> Edge(label="3", color="darkgreen") >> sqlDatabase    
-    client >> appInsights
+    
 
     # changing test diagramas
 
