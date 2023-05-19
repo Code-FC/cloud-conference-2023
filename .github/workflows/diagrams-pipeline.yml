@@ -10,7 +10,7 @@ on:
     - diagrams/**
 
 permissions:
-  contents: read-all|write-all
+  contents: write-all
 
 jobs:
   build:
