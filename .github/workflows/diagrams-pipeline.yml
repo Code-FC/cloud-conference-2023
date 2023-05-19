@@ -35,13 +35,12 @@ jobs:
       run: |
         sh ./diagrams/makefile.sh
     - name: Update assets folder
-      run: |
-        # List current files
-        ls ${{ github.workspace }}/docs/assets/
+      run: |        
+        cat ${{ github.workspace }}/docs/assets/filebase
+        echo ${{ GITHUB_JOB }} > ${{ github.workspace }}/docs/assets/filebase
         # removing files
-        rm ${{ github.workspace }}/docs/assets/*.png
-        # List files after remove
-        ls ${{ github.workspace }}/docs/assets/
+        rm ${{ github.workspace }}/docs/assets/*.png        
+        cat ${{ github.workspace }}/docs/assets/filebase
         # moving files
         mv *.png ${{ github.workspace }}/docs/assets
         git status
