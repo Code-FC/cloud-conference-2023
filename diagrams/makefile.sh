@@ -1,6 +1,7 @@
 #!/bin/bash
 
-for python_file_name in $(find $Folder_Path -name *.py)
+for python_file_name in $(find ./ -name *.py)
 do
-   python $python_file_name
+   echo $python_file_name
+   python3 $python_file_name
 done

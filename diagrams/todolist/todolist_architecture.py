@@ -4,8 +4,8 @@ from diagrams.azure.web import AppServices
 from diagrams.azure.database import SQLDatabases
 
 
-with Diagram("Website landscape", 
-             filename="landscape_architecture",
+with Diagram("Totolist landscape", 
+             filename="todolist_architecture",
              show=False):
     client = Client("Web browser")
 
