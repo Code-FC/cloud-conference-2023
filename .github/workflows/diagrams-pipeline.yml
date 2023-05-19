@@ -8,6 +8,8 @@ on:
     branches: [ "main" ]
     paths:
     - diagrams/**
+    paths-ignore:
+      - 'docs/**'
 
 permissions:
   contents: write
@@ -33,4 +35,14 @@ jobs:
     - name: Generating diagrams
       run: |
         sh ./diagrams/makefile.sh
-        
+    - name: Update assets folder
+      run: |
+        # moving files
+        mv *.png /docs/assets
+    - name: Commit diagrams image changes
+      run: |
+        git config --global user.name 'Albert Tanure'
+        git config --global user.email 'tanure@live.com'
+        git commit -am "Update generated diagrams images"
+        git push
+
