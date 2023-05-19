@@ -39,6 +39,10 @@ jobs:
         # moving files
         rm ${{ github.workspace }}/docs/assets/*.png
         mv *.png ${{ github.workspace }}/docs/assets
+    - name: Obter o branch atual
+      run: |
+        branch=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///')
+        echo "O branch atual é: $branch"
     - name: Commit diagrams image changes
       run: |
         git config --global user.name 'Albert Tanure'
