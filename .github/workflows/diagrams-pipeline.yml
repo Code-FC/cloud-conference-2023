@@ -35,15 +35,12 @@ jobs:
       run: |
         sh ./diagrams/makefile.sh
     - name: Update assets folder
-      run: |        
-        cat ${{ github.workspace }}/docs/assets/filebase
+      run: |               
         echo ${{ github.job }} > ${{ github.workspace }}/docs/assets/filebase
         # removing files
-        rm ${{ github.workspace }}/docs/assets/*.png        
-        cat ${{ github.workspace }}/docs/assets/filebase
+        rm ${{ github.workspace }}/docs/assets/*.png                
         # moving files
-        mv *.png ${{ github.workspace }}/docs/assets
-        git status
+        mv *.png ${{ github.workspace }}/docs/assets        
     - name: Obter o branch atual
       run: |
         branch=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///')
@@ -54,5 +51,5 @@ jobs:
         git config --global user.email 'tanure@live.com'
         git add .
         git commit -am "Update generated diagrams images"
-        git push
+        git push --no-verify
 
