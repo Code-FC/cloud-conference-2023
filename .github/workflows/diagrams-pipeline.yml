@@ -37,7 +37,7 @@ jobs:
     - name: Update assets folder
       run: |
         # moving files
-        mv ${{ github.workspace }}/diagrams/*.png ${{ github.workspace }}/docs/assets
+        mv *.png ${{ github.workspace }}/docs/assets
     - name: Commit diagrams image changes
       run: |
         git config --global user.name 'Albert Tanure'
