@@ -39,6 +39,7 @@ jobs:
         # moving files
         rm ${{ github.workspace }}/docs/assets/*.png
         mv *.png ${{ github.workspace }}/docs/assets
+        git status
     - name: Obter o branch atual
       run: |
         branch=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///')
