@@ -1,6 +1,6 @@
 import os
-from diagrams import Diagram
 
+# Build all python classes with diagrams dynamically
 
 class DiagramBuilder:
     def __init__(self, filename, diagram_code):
