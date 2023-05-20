@@ -45,7 +45,7 @@ jobs:
         git push
     - name: Generating diagrams
       run: |
-        sh ./diagrams/makefile.sh
+        python ./diagrams/DiagramBuilder.py
     - name: Update assets folder
       run: |                               
         # moving files
