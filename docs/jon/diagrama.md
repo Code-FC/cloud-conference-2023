@@ -2,4 +2,4 @@
 
 uhashusahuashuashuas
 
-![Diagrama Jon](../assets/jon.png)
+![Diagrama Jon](/docs/assets/jon.png)
