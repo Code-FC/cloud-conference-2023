@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cloud-conference-2023
+  description: Cloud conference days diagram as code example
+  tags:
+    - python
+    - api
+spec:
+  type: system
+  lifecycle: development
+  owner: CodeFC
