@@ -12,7 +12,7 @@ class DiagramBuilder:
 
 
 if __name__ == "__main__":
-    directory_path = "./"
+    directory_path = "."
 
     for root, dirs, files in os.walk(directory_path):        
         for file_name in files:
@@ -22,3 +22,4 @@ if __name__ == "__main__":
                     diagram_code = file.read()
                     diagram_builder = DiagramBuilder(file_name[:-3], diagram_code)
                     diagram_builder.generate_diagram()
+                    
