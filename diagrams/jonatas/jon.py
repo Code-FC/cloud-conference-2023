@@ -17,5 +17,5 @@ with Diagram("Perucas Landscape",
 
     client >>  webapp
     webapp >> cdn
-    
+     
     webapp >> sqlDatabase
