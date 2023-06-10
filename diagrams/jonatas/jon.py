@@ -16,6 +16,6 @@ with Diagram("Perucas Landscape",
         cdn = CDNProfiles("CDN")
 
     client >>  webapp
-    webapp >> cdn
+    webapp >> cdn 
      
     webapp >> sqlDatabase
