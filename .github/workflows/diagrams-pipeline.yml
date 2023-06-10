@@ -45,7 +45,7 @@ jobs:
         git push
     - name: Generating diagrams
       run: |
-        python ./diagrams/DiagramBuilder.py
+        python ${{ github.workspace }}/diagrams/DiagramBuilder.py
     - name: Update assets folder
       run: |                               
         # moving files
