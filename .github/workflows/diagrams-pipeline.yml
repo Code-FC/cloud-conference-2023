@@ -34,8 +34,12 @@ jobs:
     - name: Remove legacy images
       run: |               
         echo ${{ github.job }} > ${{ github.workspace }}/docs/assets/filebase
+        echo "Before"
+        ls ${{ github.workspace }}/docs/assets/
         # removing files
-        rm -f ${{ github.workspace }}/docs/assets/*.png                        
+        rm -f ${{ github.workspace }}/docs/assets/*.png   
+        echo "After"
+        ls ${{ github.workspace }}/docs/assets/
     - name: Commit diagrams image changes
       run: |
         git config --global user.name 'Albert Tanure'
