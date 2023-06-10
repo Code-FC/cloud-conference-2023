@@ -31,22 +31,22 @@ jobs:
         pip install diagrams   
     - name: Setup Graphviz
       uses: ts-graphviz/setup-graphviz@v1          
-    - name: Remove legacy images
-      run: |               
-        echo ${{ github.job }} > ${{ github.workspace }}/docs/assets/filebase
-        echo "Before"
-        ls ${{ github.workspace }}/docs/assets/
-        # removing files
-        rm -f ${{ github.workspace }}/docs/assets/*.png   
-        echo "After"
-        ls ${{ github.workspace }}/docs/assets/
-    - name: Commit diagrams image changes
-      run: |
-        git config --global user.name 'Albert Tanure'
-        git config --global user.email 'tanure@live.com'
-        git add .
-        git commit -am "Update generated diagrams images"
-        git push
+    #- name: Remove legacy images
+    #  run: |               
+    #    echo ${{ github.job }} > ${{ github.workspace }}/docs/assets/filebase
+    #    echo "Before"
+    #    ls ${{ github.workspace }}/docs/assets/
+    #    # removing files
+    #    rm -f ${{ github.workspace }}/docs/assets/*.png   
+    #    echo "After"
+    #    ls ${{ github.workspace }}/docs/assets/
+    #- name: Commit diagrams image changes
+    #  run: |
+    #    git config --global user.name 'Albert Tanure'
+    #    git config --global user.email 'tanure@live.com'
+    #    git add .
+    #    git commit -am "Update generated diagrams images"
+    #    git push
     - name: Generating diagrams
       run: |
         python ${{ github.workspace }}/diagrams/DiagramBuilder.py
