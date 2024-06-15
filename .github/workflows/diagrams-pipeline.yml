@@ -9,7 +9,7 @@ on:
     paths:
     - 'diagrams/**'
     - '!/docs/**'
-    
+  workflow_dispatch:  
 permissions:
   contents: write
 
